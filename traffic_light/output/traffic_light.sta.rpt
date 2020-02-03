@@ -1,0 +1,1487 @@
+TimeQuest Timing Analyzer report for traffic_light
+Sun Feb 02 22:45:16 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Hold: 'clk'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'clk'
+ 27. Slow 1200mV 0C Model Hold: 'clk'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'clk'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'clk'
+ 40. Fast 1200mV 0C Model Hold: 'clk'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'clk'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Slow Corner Signal Integrity Metrics
+ 55. Fast Corner Signal Integrity Metrics
+ 56. Setup Transfers
+ 57. Hold Transfers
+ 58. Report TCCS
+ 59. Report RSKM
+ 60. Unconstrained Paths
+ 61. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name      ; traffic_light                                       ;
+; Device Family      ; Cyclone III                                         ;
+; Device Name        ; EP3C55F484C8                                        ;
+; Timing Models      ; Final                                               ;
+; Delay Model        ; Combined                                            ;
+; Rise/Fall Delays   ; Enabled                                             ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 305.62 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; -2.272 ; -22.055            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 0.429 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clk   ; -3.000 ; -17.870                          ;
++-------+--------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                         ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -2.272 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.187      ;
+; -2.266 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 3.181      ;
+; -2.246 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 3.161      ;
+; -2.245 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 3.160      ;
+; -2.238 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.153      ;
+; -2.237 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.152      ;
+; -2.236 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.151      ;
+; -2.235 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.150      ;
+; -2.234 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.149      ;
+; -2.231 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.146      ;
+; -2.231 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.146      ;
+; -2.229 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.144      ;
+; -2.228 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.143      ;
+; -2.140 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 3.056      ;
+; -2.107 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.022      ;
+; -2.101 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 3.016      ;
+; -2.086 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.001      ;
+; -2.086 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 3.001      ;
+; -2.084 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.999      ;
+; -2.083 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.998      ;
+; -2.081 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.996      ;
+; -2.080 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.995      ;
+; -2.073 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.988      ;
+; -2.073 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.988      ;
+; -2.071 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.986      ;
+; -2.070 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.985      ;
+; -2.049 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.965      ;
+; -2.046 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.961      ;
+; -2.032 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.947      ;
+; -2.019 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.934      ;
+; -2.005 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.920      ;
+; -1.944 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 3.336      ;
+; -1.929 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.844      ;
+; -1.924 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.839      ;
+; -1.917 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.833      ;
+; -1.908 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.823      ;
+; -1.869 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.785      ;
+; -1.841 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.582     ; 2.260      ;
+; -1.832 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.747      ;
+; -1.832 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.747      ;
+; -1.830 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.745      ;
+; -1.829 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.744      ;
+; -1.805 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.720      ;
+; -1.791 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.706      ;
+; -1.779 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 3.171      ;
+; -1.778 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.693      ;
+; -1.764 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.679      ;
+; -1.734 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 3.126      ;
+; -1.669 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.584      ;
+; -1.669 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.584      ;
+; -1.667 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.582      ;
+; -1.666 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.581      ;
+; -1.663 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.578      ;
+; -1.642 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.557      ;
+; -1.631 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.582     ; 2.050      ;
+; -1.631 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.582     ; 2.050      ;
+; -1.631 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.582     ; 2.050      ;
+; -1.631 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.582     ; 2.050      ;
+; -1.628 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.543      ;
+; -1.628 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.544      ;
+; -1.626 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 3.018      ;
+; -1.601 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.516      ;
+; -1.583 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.498      ;
+; -1.576 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.491      ;
+; -1.575 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.490      ;
+; -1.574 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.489      ;
+; -1.573 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.488      ;
+; -1.572 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.487      ;
+; -1.510 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.425      ;
+; -1.509 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.424      ;
+; -1.508 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.423      ;
+; -1.507 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.422      ;
+; -1.506 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.421      ;
+; -1.499 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.581     ; 1.919      ;
+; -1.493 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 2.885      ;
+; -1.478 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.394      ;
+; -1.465 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.381      ;
+; -1.453 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.368      ;
+; -1.453 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.368      ;
+; -1.453 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.368      ;
+; -1.453 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.368      ;
+; -1.412 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.328      ;
+; -1.330 ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 2.722      ;
+; -1.321 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 2.237      ;
+; -1.207 ; state.S2     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 2.122      ;
+; -1.099 ; state.S0     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.582     ; 1.518      ;
+; -0.935 ; state.S1     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 1.850      ;
+; -0.264 ; state.S3     ; state.S0     ; clk          ; clk         ; 1.000        ; 0.391      ; 1.656      ;
+; 0.074  ; state.S0     ; state.S0     ; clk          ; clk         ; 1.000        ; -0.105     ; 0.822      ;
+; 0.093  ; state.S2     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.086     ; 0.822      ;
+; 0.093  ; state.S1     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.086     ; 0.822      ;
+; 0.093  ; state.S3     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.086     ; 0.822      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                         ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.429 ; state.S0     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.105      ; 0.746      ;
+; 0.448 ; state.S3     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 0.746      ;
+; 0.448 ; state.S1     ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 0.746      ;
+; 0.448 ; state.S2     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 0.746      ;
+; 0.460 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 0.758      ;
+; 0.712 ; state.S3     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 1.506      ;
+; 0.949 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 1.743      ;
+; 1.090 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.388      ;
+; 1.097 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 1.891      ;
+; 1.107 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 1.901      ;
+; 1.116 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.414      ;
+; 1.117 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.415      ;
+; 1.248 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.546      ;
+; 1.274 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.572      ;
+; 1.275 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.573      ;
+; 1.318 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.615      ;
+; 1.319 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.617      ;
+; 1.376 ; state.S1     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.674      ;
+; 1.377 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.675      ;
+; 1.397 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.695      ;
+; 1.398 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.696      ;
+; 1.409 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.707      ;
+; 1.410 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.707      ;
+; 1.411 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.708      ;
+; 1.411 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.708      ;
+; 1.412 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.709      ;
+; 1.413 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.085      ; 1.710      ;
+; 1.434 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.732      ;
+; 1.460 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.758      ;
+; 1.510 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.808      ;
+; 1.511 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.809      ;
+; 1.513 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.811      ;
+; 1.513 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.811      ;
+; 1.519 ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 2.313      ;
+; 1.549 ; state.S0     ; state.S1     ; clk          ; clk         ; 0.000        ; -0.391     ; 1.370      ;
+; 1.589 ; state.S2     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.887      ;
+; 1.598 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.896      ;
+; 1.599 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.897      ;
+; 1.616 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 1.914      ;
+; 1.631 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.929      ;
+; 1.631 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.929      ;
+; 1.652 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.950      ;
+; 1.673 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.971      ;
+; 1.675 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.973      ;
+; 1.698 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 1.996      ;
+; 1.720 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.018      ;
+; 1.727 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.581      ; 2.520      ;
+; 1.798 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.096      ;
+; 1.798 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.096      ;
+; 1.801 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.099      ;
+; 1.801 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.099      ;
+; 1.819 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.117      ;
+; 1.854 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.152      ;
+; 1.855 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.085      ; 2.152      ;
+; 1.856 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.085      ; 2.153      ;
+; 1.868 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.085      ; 2.165      ;
+; 1.898 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.719      ;
+; 1.917 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.215      ;
+; 1.920 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.218      ;
+; 1.921 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.219      ;
+; 1.924 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.222      ;
+; 1.924 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.222      ;
+; 1.940 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.238      ;
+; 1.981 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.279      ;
+; 1.981 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.279      ;
+; 1.983 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.281      ;
+; 1.984 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.282      ;
+; 1.984 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.282      ;
+; 1.999 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.820      ;
+; 2.000 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.821      ;
+; 2.003 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.824      ;
+; 2.003 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.824      ;
+; 2.004 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.302      ;
+; 2.004 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.302      ;
+; 2.006 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.304      ;
+; 2.007 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.305      ;
+; 2.007 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.305      ;
+; 2.016 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.582      ; 2.810      ;
+; 2.044 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.342      ;
+; 2.048 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.346      ;
+; 2.088 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.386      ;
+; 2.167 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; -0.391     ; 1.988      ;
+; 2.176 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.086      ; 2.474      ;
+; 2.177 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.086      ; 2.475      ;
+; 2.194 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.086      ; 2.492      ;
+; 2.224 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.522      ;
+; 2.239 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.537      ;
+; 2.259 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.557      ;
+; 2.279 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.577      ;
+; 2.282 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.580      ;
+; 2.393 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.691      ;
+; 2.396 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.086      ; 2.694      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clk'                                                           ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S0                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S1                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S2                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S3                  ;
+; 0.251  ; 0.471        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; state.S0                  ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; state.S1                  ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; state.S2                  ;
+; 0.259  ; 0.479        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; state.S3                  ;
+; 0.260  ; 0.480        ; 0.220          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; state.S1                  ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; state.S2                  ;
+; 0.331  ; 0.519        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; state.S3                  ;
+; 0.339  ; 0.527        ; 0.188          ; Low Pulse Width  ; clk   ; Rise       ; state.S0                  ;
+; 0.449  ; 0.449        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o               ;
+; 0.459  ; 0.459        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.459  ; 0.459        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S1|clk              ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S2|clk              ;
+; 0.471  ; 0.471        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S3|clk              ;
+; 0.479  ; 0.479        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S0|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i               ;
+; 0.520  ; 0.520        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S0|clk              ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S1|clk              ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S2|clk              ;
+; 0.528  ; 0.528        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S3|clk              ;
+; 0.529  ; 0.529        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.541  ; 0.541        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.541  ; 0.541        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.551  ; 0.551        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o               ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clk        ; 0.375 ; 0.547 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clk        ; -0.072 ; -0.229 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 8.034 ; 8.065 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 7.071 ; 6.986 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 7.050 ; 6.967 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 7.845 ; 7.701 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 7.330 ; 7.349 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 8.034 ; 8.065 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 7.701 ; 7.845 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 6.889 ; 6.809 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 6.908 ; 6.827 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 6.889 ; 6.809 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 7.417 ; 7.394 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 7.157 ; 7.176 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 7.886 ; 7.919 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 7.394 ; 7.417 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                        ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 334.9 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -1.986 ; -19.278           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.379 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -17.870                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                          ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -1.986 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.913      ;
+; -1.986 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.913      ;
+; -1.986 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.913      ;
+; -1.985 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.912      ;
+; -1.985 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.912      ;
+; -1.984 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.911      ;
+; -1.983 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.910      ;
+; -1.983 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.910      ;
+; -1.982 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.909      ;
+; -1.965 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.892      ;
+; -1.938 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.865      ;
+; -1.936 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.863      ;
+; -1.920 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.847      ;
+; -1.893 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.820      ;
+; -1.869 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.796      ;
+; -1.869 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.796      ;
+; -1.867 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.794      ;
+; -1.866 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.793      ;
+; -1.860 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.787      ;
+; -1.830 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.757      ;
+; -1.830 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.757      ;
+; -1.828 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.755      ;
+; -1.828 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.755      ;
+; -1.827 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.754      ;
+; -1.820 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.747      ;
+; -1.799 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.726      ;
+; -1.790 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.717      ;
+; -1.789 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.716      ;
+; -1.781 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.708      ;
+; -1.760 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.687      ;
+; -1.737 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.664      ;
+; -1.711 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.638      ;
+; -1.692 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.619      ;
+; -1.690 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.617      ;
+; -1.680 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.606      ;
+; -1.680 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.606      ;
+; -1.678 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.604      ;
+; -1.677 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.603      ;
+; -1.667 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.594      ;
+; -1.666 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 3.044      ;
+; -1.653 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.580      ;
+; -1.651 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.546     ; 2.107      ;
+; -1.639 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.565      ;
+; -1.631 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.076     ; 2.557      ;
+; -1.610 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.076     ; 2.536      ;
+; -1.587 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.076     ; 2.513      ;
+; -1.550 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 2.928      ;
+; -1.512 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.439      ;
+; -1.511 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 2.889      ;
+; -1.491 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.417      ;
+; -1.464 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.391      ;
+; -1.464 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.391      ;
+; -1.462 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.389      ;
+; -1.461 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.388      ;
+; -1.457 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.546     ; 1.913      ;
+; -1.456 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.546     ; 1.912      ;
+; -1.456 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.546     ; 1.912      ;
+; -1.456 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.546     ; 1.912      ;
+; -1.441 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 2.819      ;
+; -1.434 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.361      ;
+; -1.434 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.361      ;
+; -1.434 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.361      ;
+; -1.432 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.359      ;
+; -1.431 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.358      ;
+; -1.423 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.350      ;
+; -1.415 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.342      ;
+; -1.394 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.321      ;
+; -1.371 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.298      ;
+; -1.371 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.298      ;
+; -1.371 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.298      ;
+; -1.371 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.298      ;
+; -1.369 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.296      ;
+; -1.368 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.295      ;
+; -1.361 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.375      ; 2.738      ;
+; -1.329 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.256      ;
+; -1.320 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.546     ; 1.776      ;
+; -1.318 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.245      ;
+; -1.317 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.244      ;
+; -1.317 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.244      ;
+; -1.317 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.244      ;
+; -1.275 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.202      ;
+; -1.266 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.193      ;
+; -1.181 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 2.108      ;
+; -1.145 ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 2.523      ;
+; -1.084 ; state.S2     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 2.011      ;
+; -0.968 ; state.S0     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.546     ; 1.424      ;
+; -0.855 ; state.S1     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 1.782      ;
+; -0.190 ; state.S3     ; state.S0     ; clk          ; clk         ; 1.000        ; 0.376      ; 1.568      ;
+; 0.162  ; state.S0     ; state.S0     ; clk          ; clk         ; 1.000        ; -0.095     ; 0.745      ;
+; 0.182  ; state.S2     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.075     ; 0.745      ;
+; 0.182  ; state.S1     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.075     ; 0.745      ;
+; 0.182  ; state.S3     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.075     ; 0.745      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                          ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.379 ; state.S0     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.095      ; 0.669      ;
+; 0.399 ; state.S3     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 0.669      ;
+; 0.399 ; state.S1     ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 0.669      ;
+; 0.399 ; state.S2     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 0.669      ;
+; 0.414 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 0.684      ;
+; 0.607 ; state.S3     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 1.348      ;
+; 0.842 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 1.583      ;
+; 0.990 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 1.731      ;
+; 1.002 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 1.743      ;
+; 1.003 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.273      ;
+; 1.031 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.301      ;
+; 1.031 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.301      ;
+; 1.151 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.421      ;
+; 1.179 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.449      ;
+; 1.179 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.449      ;
+; 1.222 ; state.S1     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.492      ;
+; 1.228 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.499      ;
+; 1.248 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.519      ;
+; 1.283 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.553      ;
+; 1.293 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.563      ;
+; 1.294 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.564      ;
+; 1.297 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.567      ;
+; 1.298 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.568      ;
+; 1.299 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.569      ;
+; 1.301 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.571      ;
+; 1.301 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.571      ;
+; 1.306 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.576      ;
+; 1.314 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.584      ;
+; 1.340 ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 2.081      ;
+; 1.340 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.611      ;
+; 1.407 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.677      ;
+; 1.411 ; state.S0     ; state.S1     ; clk          ; clk         ; 0.000        ; -0.376     ; 1.230      ;
+; 1.412 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.682      ;
+; 1.413 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.683      ;
+; 1.415 ; state.S2     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.685      ;
+; 1.416 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.686      ;
+; 1.495 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.765      ;
+; 1.496 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.766      ;
+; 1.501 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.771      ;
+; 1.502 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.772      ;
+; 1.502 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.772      ;
+; 1.508 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 2.249      ;
+; 1.510 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.780      ;
+; 1.524 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.794      ;
+; 1.534 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.804      ;
+; 1.545 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.815      ;
+; 1.550 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.821      ;
+; 1.600 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.870      ;
+; 1.601 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.871      ;
+; 1.604 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.874      ;
+; 1.604 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.874      ;
+; 1.627 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.898      ;
+; 1.657 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.927      ;
+; 1.669 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.939      ;
+; 1.697 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.967      ;
+; 1.697 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 1.967      ;
+; 1.716 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.986      ;
+; 1.717 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.987      ;
+; 1.719 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.989      ;
+; 1.720 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 1.990      ;
+; 1.726 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.997      ;
+; 1.735 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; -0.375     ; 1.555      ;
+; 1.746 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 2.017      ;
+; 1.771 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.041      ;
+; 1.772 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.042      ;
+; 1.772 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.546      ; 2.513      ;
+; 1.773 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.043      ;
+; 1.775 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.045      ;
+; 1.775 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.045      ;
+; 1.791 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.061      ;
+; 1.792 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.062      ;
+; 1.793 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.063      ;
+; 1.795 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.065      ;
+; 1.795 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.065      ;
+; 1.824 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; -0.376     ; 1.643      ;
+; 1.825 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; -0.376     ; 1.644      ;
+; 1.827 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; -0.376     ; 1.646      ;
+; 1.828 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; -0.376     ; 1.647      ;
+; 1.868 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.138      ;
+; 1.874 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.144      ;
+; 1.882 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 2.153      ;
+; 1.976 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; -0.376     ; 1.795      ;
+; 1.988 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.076      ; 2.259      ;
+; 2.003 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.075      ; 2.273      ;
+; 2.031 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.075      ; 2.301      ;
+; 2.031 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.075      ; 2.301      ;
+; 2.034 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.304      ;
+; 2.070 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.340      ;
+; 2.074 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.344      ;
+; 2.099 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.369      ;
+; 2.172 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.442      ;
+; 2.175 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.075      ; 2.445      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clk'                                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S0                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S1                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S2                  ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk   ; Rise       ; state.S3                  ;
+; 0.227  ; 0.443        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S0                  ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S1                  ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S2                  ;
+; 0.268  ; 0.484        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S3                  ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S1                  ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S2                  ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S3                  ;
+; 0.367  ; 0.551        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S0                  ;
+; 0.449  ; 0.449        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o               ;
+; 0.451  ; 0.451        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.451  ; 0.451        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S1|clk              ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S2|clk              ;
+; 0.461  ; 0.461        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S3|clk              ;
+; 0.497  ; 0.497        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S0|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S0|clk              ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S1|clk              ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S2|clk              ;
+; 0.538  ; 0.538        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S3|clk              ;
+; 0.548  ; 0.548        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.548  ; 0.548        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.551  ; 0.551        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o               ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clk        ; 0.376 ; 0.679 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clk        ; -0.099 ; -0.382 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 7.743 ; 7.705 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 6.756 ; 6.588 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 6.732 ; 6.570 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 7.454 ; 7.287 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 6.943 ; 6.999 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 7.743 ; 7.705 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 7.287 ; 7.454 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 6.586 ; 6.430 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 6.609 ; 6.447 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 6.586 ; 6.430 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 7.089 ; 6.976 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 6.787 ; 6.841 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 7.609 ; 7.577 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 6.976 ; 7.089 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -0.426 ; -3.927            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.177 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -13.578                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                          ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -0.426 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.375      ;
+; -0.426 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.375      ;
+; -0.411 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.360      ;
+; -0.409 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.358      ;
+; -0.409 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.358      ;
+; -0.408 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.357      ;
+; -0.405 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.354      ;
+; -0.405 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.354      ;
+; -0.355 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.304      ;
+; -0.354 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.303      ;
+; -0.352 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.301      ;
+; -0.352 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.301      ;
+; -0.352 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.301      ;
+; -0.351 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.300      ;
+; -0.350 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.299      ;
+; -0.337 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.286      ;
+; -0.335 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.284      ;
+; -0.335 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.284      ;
+; -0.334 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.283      ;
+; -0.331 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.280      ;
+; -0.331 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.280      ;
+; -0.328 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.277      ;
+; -0.328 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.277      ;
+; -0.326 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.275      ;
+; -0.324 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.273      ;
+; -0.313 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.262      ;
+; -0.311 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.260      ;
+; -0.311 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.260      ;
+; -0.310 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.259      ;
+; -0.307 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.256      ;
+; -0.307 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.256      ;
+; -0.302 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 1.445      ;
+; -0.280 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.229      ;
+; -0.265 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.214      ;
+; -0.263 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.212      ;
+; -0.252 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.201      ;
+; -0.237 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.186      ;
+; -0.231 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.179      ;
+; -0.231 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.179      ;
+; -0.228 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 1.371      ;
+; -0.216 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.164      ;
+; -0.214 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.162      ;
+; -0.214 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.039     ; 1.162      ;
+; -0.213 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.161      ;
+; -0.210 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.158      ;
+; -0.210 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.158      ;
+; -0.204 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 1.347      ;
+; -0.166 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.913      ;
+; -0.156 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 1.299      ;
+; -0.148 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.097      ;
+; -0.131 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.079      ;
+; -0.123 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.072      ;
+; -0.114 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.063      ;
+; -0.114 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.063      ;
+; -0.113 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.062      ;
+; -0.111 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.060      ;
+; -0.111 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.060      ;
+; -0.109 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.058      ;
+; -0.107 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.155      ; 1.249      ;
+; -0.097 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.046      ;
+; -0.097 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 1.046      ;
+; -0.096 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.045      ;
+; -0.093 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.042      ;
+; -0.092 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.041      ;
+; -0.091 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.040      ;
+; -0.090 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.039      ;
+; -0.090 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.039      ;
+; -0.088 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.835      ;
+; -0.087 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.036      ;
+; -0.086 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.833      ;
+; -0.086 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.833      ;
+; -0.086 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.035      ;
+; -0.085 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.832      ;
+; -0.084 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.033      ;
+; -0.072 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.021      ;
+; -0.069 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.018      ;
+; -0.069 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.018      ;
+; -0.068 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 1.000        ; -0.038     ; 1.017      ;
+; -0.047 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 0.996      ;
+; -0.041 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 0.990      ;
+; -0.032 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 0.981      ;
+; -0.031 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.240     ; 0.778      ;
+; -0.016 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 1.000        ; -0.038     ; 0.965      ;
+; 0.015  ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 1.128      ;
+; 0.029  ; state.S2     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.920      ;
+; 0.098  ; state.S0     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.240     ; 0.649      ;
+; 0.151  ; state.S1     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.798      ;
+; 0.433  ; state.S3     ; state.S0     ; clk          ; clk         ; 1.000        ; 0.156      ; 0.710      ;
+; 0.591  ; state.S0     ; state.S0     ; clk          ; clk         ; 1.000        ; -0.046     ; 0.350      ;
+; 0.599  ; state.S3     ; state.S3     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.350      ;
+; 0.599  ; state.S1     ; state.S1     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.350      ;
+; 0.599  ; state.S2     ; state.S2     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.350      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                          ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.177 ; state.S0     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.046      ; 0.307      ;
+; 0.185 ; state.S3     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.307      ;
+; 0.185 ; state.S1     ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.307      ;
+; 0.185 ; state.S2     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.307      ;
+; 0.192 ; \REGCOM:s[0] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.314      ;
+; 0.275 ; state.S3     ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.599      ;
+; 0.418 ; \REGCOM:s[3] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.742      ;
+; 0.428 ; \REGCOM:s[0] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.752      ;
+; 0.460 ; \REGCOM:s[3] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.582      ;
+; 0.464 ; \REGCOM:s[3] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.586      ;
+; 0.464 ; \REGCOM:s[3] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.586      ;
+; 0.478 ; \REGCOM:s[1] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.802      ;
+; 0.520 ; \REGCOM:s[1] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.642      ;
+; 0.524 ; \REGCOM:s[1] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.646      ;
+; 0.524 ; \REGCOM:s[1] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.646      ;
+; 0.528 ; \REGCOM:s[0] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.651      ;
+; 0.532 ; \REGCOM:s[4] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.655      ;
+; 0.549 ; state.S1     ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.671      ;
+; 0.559 ; \REGCOM:s[4] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.681      ;
+; 0.560 ; \REGCOM:s[4] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.682      ;
+; 0.561 ; \REGCOM:s[4] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.683      ;
+; 0.564 ; \REGCOM:s[4] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.686      ;
+; 0.564 ; \REGCOM:s[0] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.686      ;
+; 0.564 ; \REGCOM:s[4] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.686      ;
+; 0.570 ; \REGCOM:s[0] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.692      ;
+; 0.571 ; \REGCOM:s[0] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.693      ;
+; 0.582 ; \REGCOM:s[1] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.704      ;
+; 0.586 ; \REGCOM:s[5] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.910      ;
+; 0.592 ; \REGCOM:s[1] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.714      ;
+; 0.605 ; \REGCOM:s[0] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.727      ;
+; 0.605 ; \REGCOM:s[0] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.727      ;
+; 0.608 ; \REGCOM:s[0] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.730      ;
+; 0.608 ; \REGCOM:s[0] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.730      ;
+; 0.611 ; state.S0     ; state.S1     ; clk          ; clk         ; 0.000        ; -0.156     ; 0.539      ;
+; 0.620 ; \REGCOM:s[1] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.743      ;
+; 0.635 ; state.S2     ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.757      ;
+; 0.638 ; \REGCOM:s[5] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.760      ;
+; 0.642 ; \REGCOM:s[5] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.764      ;
+; 0.642 ; \REGCOM:s[5] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.764      ;
+; 0.668 ; \REGCOM:s[4] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 0.992      ;
+; 0.668 ; \REGCOM:s[5] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.790      ;
+; 0.674 ; \REGCOM:s[5] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.797      ;
+; 0.677 ; \REGCOM:s[3] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.799      ;
+; 0.677 ; \REGCOM:s[2] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.799      ;
+; 0.696 ; \REGCOM:s[1] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.818      ;
+; 0.697 ; \REGCOM:s[1] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.819      ;
+; 0.701 ; \REGCOM:s[5] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.823      ;
+; 0.703 ; \REGCOM:s[5] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.825      ;
+; 0.706 ; state.S2     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.829      ;
+; 0.706 ; \REGCOM:s[5] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.828      ;
+; 0.706 ; \REGCOM:s[5] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.828      ;
+; 0.717 ; \REGCOM:s[1] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.839      ;
+; 0.720 ; \REGCOM:s[4] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.842      ;
+; 0.724 ; \REGCOM:s[4] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.846      ;
+; 0.724 ; \REGCOM:s[4] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.846      ;
+; 0.745 ; \REGCOM:s[2] ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.867      ;
+; 0.753 ; state.S1     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.876      ;
+; 0.759 ; state.S2     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.881      ;
+; 0.759 ; state.S2     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.881      ;
+; 0.759 ; state.S2     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.881      ;
+; 0.761 ; state.S2     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.883      ;
+; 0.769 ; state.S3     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.892      ;
+; 0.780 ; state.S1     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.902      ;
+; 0.781 ; state.S1     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.903      ;
+; 0.782 ; state.S1     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.904      ;
+; 0.785 ; state.S1     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.907      ;
+; 0.785 ; state.S1     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.907      ;
+; 0.796 ; state.S3     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.918      ;
+; 0.797 ; state.S3     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.919      ;
+; 0.798 ; state.S3     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.920      ;
+; 0.801 ; state.S3     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.923      ;
+; 0.801 ; state.S3     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.923      ;
+; 0.803 ; \REGCOM:s[2] ; state.S0     ; clk          ; clk         ; 0.000        ; 0.240      ; 1.127      ;
+; 0.810 ; state.S0     ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; -0.155     ; 0.739      ;
+; 0.812 ; \REGCOM:s[3] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.935      ;
+; 0.836 ; state.S2     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.958      ;
+; 0.836 ; \REGCOM:s[3] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 0.958      ;
+; 0.860 ; state.S0     ; \REGCOM:s[3] ; clk          ; clk         ; 0.000        ; -0.156     ; 0.788      ;
+; 0.860 ; state.S0     ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; -0.156     ; 0.788      ;
+; 0.861 ; state.S0     ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; -0.156     ; 0.789      ;
+; 0.863 ; state.S0     ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; -0.156     ; 0.791      ;
+; 0.870 ; \REGCOM:s[2] ; state.S2     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.992      ;
+; 0.874 ; \REGCOM:s[2] ; state.S3     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.996      ;
+; 0.874 ; \REGCOM:s[2] ; state.S1     ; clk          ; clk         ; 0.000        ; 0.038      ; 0.996      ;
+; 0.876 ; \REGCOM:s[2] ; \REGCOM:s[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.999      ;
+; 0.900 ; \REGCOM:s[2] ; \REGCOM:s[5] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.022      ;
+; 0.912 ; \REGCOM:s[3] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.034      ;
+; 0.915 ; \REGCOM:s[3] ; \REGCOM:s[2] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.037      ;
+; 0.923 ; \REGCOM:s[3] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.045      ;
+; 0.937 ; state.S0     ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; -0.156     ; 0.865      ;
+; 0.959 ; \REGCOM:s[2] ; \REGCOM:s[1] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.081      ;
+; 0.964 ; \REGCOM:s[2] ; \REGCOM:s[0] ; clk          ; clk         ; 0.000        ; 0.038      ; 1.086      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clk'                                                            ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; state.S0                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; state.S1                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; state.S2                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; state.S3                  ;
+; -0.083 ; 0.101        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S0                  ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S1                  ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S2                  ;
+; -0.055 ; 0.129        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; state.S3                  ;
+; 0.097  ; 0.097        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S0|clk              ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o               ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S1|clk              ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S2|clk              ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; state.S3|clk              ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i               ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]              ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]              ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]              ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]              ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]              ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S1                  ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S2                  ;
+; 0.653  ; 0.869        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S3                  ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]              ;
+; 0.680  ; 0.896        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; state.S0                  ;
+; 0.864  ; 0.864        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0] ;
+; 0.864  ; 0.864        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk   ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[0]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[1]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[2]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[3]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[4]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \REGCOM:s[5]|clk          ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S1|clk              ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S2|clk              ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S3|clk              ;
+; 0.877  ; 0.877        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o               ;
+; 0.902  ; 0.902        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; state.S0|clk              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clk        ; 0.170 ; 0.427 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clk        ; -0.029 ; -0.302 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 4.059 ; 4.173 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 3.359 ; 3.460 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 3.364 ; 3.461 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 3.718 ; 3.750 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 3.592 ; 3.497 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 4.059 ; 4.173 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 3.750 ; 3.718 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 3.286 ; 3.384 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 3.286 ; 3.384 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 3.292 ; 3.386 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 3.509 ; 3.639 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 3.511 ; 3.418 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 3.992 ; 4.105 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 3.639 ; 3.509 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.272  ; 0.177 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -2.272  ; 0.177 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -22.055 ; 0.0   ; 0.0      ; 0.0     ; -17.87              ;
+;  clk             ; -22.055 ; 0.000 ; N/A      ; N/A     ; -17.870             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clk        ; 0.376 ; 0.679 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clk        ; -0.029 ; -0.229 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 8.034 ; 8.065 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 7.071 ; 6.986 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 7.050 ; 6.967 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 7.845 ; 7.701 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 7.330 ; 7.349 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 8.034 ; 8.065 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 7.701 ; 7.845 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; q[*]      ; clk        ; 3.286 ; 3.384 ; Rise       ; clk             ;
+;  q[0]     ; clk        ; 3.286 ; 3.384 ; Rise       ; clk             ;
+;  q[1]     ; clk        ; 3.292 ; 3.386 ; Rise       ; clk             ;
+;  q[2]     ; clk        ; 3.509 ; 3.639 ; Rise       ; clk             ;
+;  q[3]     ; clk        ; 3.511 ; 3.418 ; Rise       ; clk             ;
+;  q[4]     ; clk        ; 3.992 ; 4.105 ; Rise       ; clk             ;
+;  q[5]     ; clk        ; 3.639 ; 3.509 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; q[0]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; q[1]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; q[2]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; q[3]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; q[4]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; q[5]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; q[0]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.34 V              ; -0.00824 V          ; 0.139 V                              ; 0.044 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.34 V             ; -0.00824 V         ; 0.139 V                             ; 0.044 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; q[1]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.34 V              ; -0.00824 V          ; 0.139 V                              ; 0.044 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.34 V             ; -0.00824 V         ; 0.139 V                             ; 0.044 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; q[2]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.34 V              ; -0.00824 V          ; 0.139 V                              ; 0.044 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.34 V             ; -0.00824 V         ; 0.139 V                             ; 0.044 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; q[3]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.34 V              ; -0.00824 V          ; 0.139 V                              ; 0.044 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.34 V             ; -0.00824 V         ; 0.139 V                             ; 0.044 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; q[4]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.33 V              ; -0.00219 V          ; 0.108 V                              ; 0.043 V                              ; 3.76e-09 s                  ; 3.48e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.33 V             ; -0.00219 V         ; 0.108 V                             ; 0.043 V                             ; 3.76e-09 s                 ; 3.48e-09 s                 ; Yes                       ; Yes                       ;
+; q[5]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-07 V                   ; 2.34 V              ; -0.00824 V          ; 0.139 V                              ; 0.044 V                              ; 6.89e-10 s                  ; 6.56e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-07 V                  ; 2.34 V             ; -0.00824 V         ; 0.139 V                             ; 0.044 V                             ; 6.89e-10 s                 ; 6.56e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.53e-07 V                   ; 2.35 V              ; -0.00333 V          ; 0.096 V                              ; 0.006 V                              ; 4.5e-10 s                   ; 3.85e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.53e-07 V                  ; 2.35 V             ; -0.00333 V         ; 0.096 V                             ; 0.006 V                             ; 4.5e-10 s                  ; 3.85e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.51e-07 V                   ; 2.34 V              ; -0.00699 V          ; 0.108 V                              ; 0.027 V                              ; 6.58e-10 s                  ; 8.2e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 2.51e-07 V                  ; 2.34 V             ; -0.00699 V         ; 0.108 V                             ; 0.027 V                             ; 6.58e-10 s                 ; 8.2e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; q[0]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; q[1]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; q[2]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; q[3]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; q[4]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.64 V              ; -0.0118 V           ; 0.201 V                              ; 0.175 V                              ; 2.38e-09 s                  ; 2.21e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.64 V             ; -0.0118 V          ; 0.201 V                             ; 0.175 V                             ; 2.38e-09 s                 ; 2.21e-09 s                 ; No                        ; Yes                       ;
+; q[5]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.7e-08 V                    ; 2.71 V              ; -0.0354 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.7e-08 V                   ; 2.71 V             ; -0.0354 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.2e-08 V                    ; 2.74 V              ; -0.061 V            ; 0.159 V                              ; 0.078 V                              ; 2.7e-10 s                   ; 2.2e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.2e-08 V                   ; 2.74 V             ; -0.061 V           ; 0.159 V                             ; 0.078 V                             ; 2.7e-10 s                  ; 2.2e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.52e-08 V                   ; 2.7 V               ; -0.0121 V           ; 0.274 V                              ; 0.034 V                              ; 3.18e-10 s                  ; 4.96e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.52e-08 V                  ; 2.7 V              ; -0.0121 V          ; 0.274 V                             ; 0.034 V                             ; 3.18e-10 s                 ; 4.96e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 323      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 323      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Sun Feb 02 22:45:14 2020
+Info: Command: quartus_sta traffic_light -c traffic_light
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Core supply voltage is 1.2V
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'traffic_light.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.272
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.272       -22.055 clk 
+Info (332146): Worst-case hold slack is 0.429
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.429         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -17.870 clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.986
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.986       -19.278 clk 
+Info (332146): Worst-case hold slack is 0.379
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.379         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -17.870 clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.426
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.426        -3.927 clk 
+Info (332146): Worst-case hold slack is 0.177
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.177         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -13.578 clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4664 megabytes
+    Info: Processing ended: Sun Feb 02 22:45:16 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
+
+

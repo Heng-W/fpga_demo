@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\resources\FPGA_experiment\four_f_adder\simulation\qsim
+vBlock1
+Z1 !s100 QhVLbom_VHmEb@m5f]djd3
+Z2 I`FDcni?ZoGWVLKY>ZJ@MV3
+Z3 VTW7B::EmQ?SCI9fUTDUI<1
+Z4 dE:\resources\FPGA_experiment\four_f_adder\simulation\qsim
+Z5 w1526376455
+Z6 8f_adder.vo
+Z7 Ff_adder.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|f_adder.vo|
+Z10 o-work work -O0
+Z11 n@block1
+!i10b 1
+!s85 0
+Z12 !s108 1526376458.569000
+Z13 !s107 f_adder.vo|
+!s101 -O0
+vBlock1_vlg_check_tst
+!i10b 1
+Z14 !s100 AJMf7CEzAf8Kn[V[KmS3m3
+Z15 IMzJD41OCTQf<GNhcYYg4S1
+Z16 VXiMe8iozDOeC>>CiiM[j>0
+R4
+Z17 w1526376454
+Z18 8f_adder.vt
+Z19 Ff_adder.vt
+L0 73
+R8
+r1
+!s85 0
+31
+Z20 !s108 1526376458.824000
+Z21 !s107 f_adder.vt|
+Z22 !s90 -work|work|f_adder.vt|
+!s101 -O0
+R10
+Z23 n@block1_vlg_check_tst
+vBlock1_vlg_sample_tst
+!i10b 1
+Z24 !s100 Yd<zhGWcE^YV[:cF<__j<3
+Z25 ICOj6hEUFnjz]n0zjBBYN?0
+Z26 Vf2<e]27Jomz9RZaOz:1e93
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@block1_vlg_sample_tst
+vBlock1_vlg_vec_tst
+!i10b 1
+!s100 KPFN@>VR3;T9?W;]8L9zn0
+IKAWf1KfYLV41h<AOb@aR?1
+Z28 V8EbEX^g@9e0ZUXjTWSm=l2
+R4
+R17
+R18
+R19
+Z29 L0 276
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@block1_vlg_vec_tst

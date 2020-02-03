@@ -1,0 +1,183 @@
+|clock
+COUT <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+CLK => deal_time:inst.clk
+RST => cnt10:inst2.RST
+RST => cnt10:inst3.RST
+RST => cnt10:inst4.RST
+RST => cnt6:inst1.RST
+RST => cnt10:inst6.RST
+RST => cnt6:inst7.RST
+EN => cnt10:inst2.EN
+EN => cnt10:inst3.EN
+EN => cnt10:inst4.EN
+EN => cnt6:inst1.EN
+EN => cnt10:inst6.EN
+EN => cnt6:inst7.EN
+min0[0] <= cnt10:inst6.DOUT[0]
+min0[1] <= cnt10:inst6.DOUT[1]
+min0[2] <= cnt10:inst6.DOUT[2]
+min0[3] <= cnt10:inst6.DOUT[3]
+min1[0] <= cnt6:inst7.DOUT[0]
+min1[1] <= cnt6:inst7.DOUT[1]
+min1[2] <= cnt6:inst7.DOUT[2]
+min1[3] <= cnt6:inst7.DOUT[3]
+ms0[0] <= cnt10:inst2.DOUT[0]
+ms0[1] <= cnt10:inst2.DOUT[1]
+ms0[2] <= cnt10:inst2.DOUT[2]
+ms0[3] <= cnt10:inst2.DOUT[3]
+ms1[0] <= cnt10:inst3.DOUT[0]
+ms1[1] <= cnt10:inst3.DOUT[1]
+ms1[2] <= cnt10:inst3.DOUT[2]
+ms1[3] <= cnt10:inst3.DOUT[3]
+s0[0] <= cnt10:inst4.DOUT[0]
+s0[1] <= cnt10:inst4.DOUT[1]
+s0[2] <= cnt10:inst4.DOUT[2]
+s0[3] <= cnt10:inst4.DOUT[3]
+s1[0] <= cnt6:inst1.DOUT[0]
+s1[1] <= cnt6:inst1.DOUT[1]
+s1[2] <= cnt6:inst1.DOUT[2]
+s1[3] <= cnt6:inst1.DOUT[3]
+
+
+|clock|cnt10:inst4
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cnt10:inst3
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cnt10:inst2
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|deal_time:inst
+clk => ck.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+fclk <= ck.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cnt6:inst1
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cnt10:inst6
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|cnt6:inst7
+CLK => Q[0].CLK
+CLK => Q[1].CLK
+CLK => Q[2].CLK
+CLK => Q[3].CLK
+RST => Q[0].ACLR
+RST => Q[1].ACLR
+RST => Q[2].ACLR
+RST => Q[3].ACLR
+EN => Q[0].ENA
+EN => Q[3].ENA
+EN => Q[2].ENA
+EN => Q[1].ENA
+DOUT[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

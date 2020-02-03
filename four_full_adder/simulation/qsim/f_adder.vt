@@ -1,0 +1,447 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "05/15/2018 17:27:34"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    Block1
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Block1_vlg_sample_tst(
+	a,
+	b,
+	c,
+	d,
+	e,
+	f,
+	g,
+	h,
+	i,
+	sampler_tx
+);
+input  a;
+input  b;
+input  c;
+input  d;
+input  e;
+input  f;
+input  g;
+input  h;
+input  i;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(a or b or c or d or e or f or g or h or i)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module Block1_vlg_check_tst (
+	y1,
+	y2,
+	y3,
+	y4,
+	y5,
+	sampler_rx
+);
+input  y1;
+input  y2;
+input  y3;
+input  y4;
+input  y5;
+input sampler_rx;
+
+reg  y1_expected;
+reg  y2_expected;
+reg  y3_expected;
+reg  y4_expected;
+reg  y5_expected;
+
+reg  y1_prev;
+reg  y2_prev;
+reg  y3_prev;
+reg  y4_prev;
+reg  y5_prev;
+
+reg  y1_expected_prev;
+reg  y2_expected_prev;
+reg  y3_expected_prev;
+reg  y4_expected_prev;
+reg  y5_expected_prev;
+
+reg  last_y1_exp;
+reg  last_y2_exp;
+reg  last_y3_exp;
+reg  last_y4_exp;
+reg  last_y5_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:5] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 5'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	y1_prev = y1;
+	y2_prev = y2;
+	y3_prev = y3;
+	y4_prev = y4;
+	y5_prev = y5;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	y1_expected_prev = y1_expected;
+	y2_expected_prev = y2_expected;
+	y3_expected_prev = y3_expected;
+	y4_expected_prev = y4_expected;
+	y5_expected_prev = y5_expected;
+end
+
+
+
+// expected y1
+initial
+begin
+	y1_expected = 1'bX;
+end 
+
+// expected y2
+initial
+begin
+	y2_expected = 1'bX;
+end 
+
+// expected y3
+initial
+begin
+	y3_expected = 1'bX;
+end 
+
+// expected y4
+initial
+begin
+	y4_expected = 1'bX;
+end 
+
+// expected y5
+initial
+begin
+	y5_expected = 1'bX;
+end 
+// generate trigger
+always @(y1_expected or y1 or y2_expected or y2 or y3_expected or y3 or y4_expected or y4 or y5_expected or y5)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected y1 = %b | expected y2 = %b | expected y3 = %b | expected y4 = %b | expected y5 = %b | ",y1_expected_prev,y2_expected_prev,y3_expected_prev,y4_expected_prev,y5_expected_prev);
+	$display("| real y1 = %b | real y2 = %b | real y3 = %b | real y4 = %b | real y5 = %b | ",y1_prev,y2_prev,y3_prev,y4_prev,y5_prev);
+`endif
+	if (
+		( y1_expected_prev !== 1'bx ) && ( y1_prev !== y1_expected_prev )
+		&& ((y1_expected_prev !== last_y1_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port y1 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", y1_expected_prev);
+		$display ("     Real value = %b", y1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_y1_exp = y1_expected_prev;
+	end
+	if (
+		( y2_expected_prev !== 1'bx ) && ( y2_prev !== y2_expected_prev )
+		&& ((y2_expected_prev !== last_y2_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port y2 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", y2_expected_prev);
+		$display ("     Real value = %b", y2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_y2_exp = y2_expected_prev;
+	end
+	if (
+		( y3_expected_prev !== 1'bx ) && ( y3_prev !== y3_expected_prev )
+		&& ((y3_expected_prev !== last_y3_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port y3 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", y3_expected_prev);
+		$display ("     Real value = %b", y3_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_y3_exp = y3_expected_prev;
+	end
+	if (
+		( y4_expected_prev !== 1'bx ) && ( y4_prev !== y4_expected_prev )
+		&& ((y4_expected_prev !== last_y4_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port y4 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", y4_expected_prev);
+		$display ("     Real value = %b", y4_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_y4_exp = y4_expected_prev;
+	end
+	if (
+		( y5_expected_prev !== 1'bx ) && ( y5_prev !== y5_expected_prev )
+		&& ((y5_expected_prev !== last_y5_exp) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port y5 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", y5_expected_prev);
+		$display ("     Real value = %b", y5_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_y5_exp = y5_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module Block1_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg a;
+reg b;
+reg c;
+reg d;
+reg e;
+reg f;
+reg g;
+reg h;
+reg i;
+// wires                                               
+wire y1;
+wire y2;
+wire y3;
+wire y4;
+wire y5;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+Block1 i1 (
+// port map - connection between master ports and signals/registers   
+	.a(a),
+	.b(b),
+	.c(c),
+	.d(d),
+	.e(e),
+	.f(f),
+	.g(g),
+	.h(h),
+	.i(i),
+	.y1(y1),
+	.y2(y2),
+	.y3(y3),
+	.y4(y4),
+	.y5(y5)
+);
+
+// a
+always
+begin
+	a = 1'b0;
+	a = #25000 1'b1;
+	#25000;
+end 
+
+// b
+initial
+begin
+	repeat(13)
+	begin
+		b = 1'b0;
+		b = #37500 1'b1;
+		# 37500;
+	end
+	b = 1'b0;
+end 
+
+// c
+initial
+begin
+	repeat(6)
+	begin
+		c = 1'b0;
+		c = #75000 1'b1;
+		# 75000;
+	end
+	c = 1'b0;
+	c = #75000 1'b1;
+end 
+
+// d
+initial
+begin
+	repeat(9)
+	begin
+		d = 1'b0;
+		d = #52500 1'b1;
+		# 52500;
+	end
+	d = 1'b0;
+	d = #52500 1'b1;
+end 
+
+// e
+initial
+begin
+	repeat(8)
+	begin
+		e = 1'b0;
+		e = #60000 1'b1;
+		# 60000;
+	end
+	e = 1'b0;
+end 
+
+// f
+always
+begin
+	f = 1'b0;
+	f = #100000 1'b1;
+	#100000;
+end 
+
+// g
+initial
+begin
+	g = 1'b1;
+	# 50000;
+	repeat(6)
+	begin
+		g = 1'b0;
+		g = #72500 1'b1;
+		# 72500;
+	end
+	g = 1'b0;
+	g = #72500 1'b1;
+end 
+
+// h
+initial
+begin
+	h = 1'b1;
+	# 25000;
+	repeat(5)
+	begin
+		h = 1'b0;
+		h = #90000 1'b1;
+		# 90000;
+	end
+	h = 1'b0;
+end 
+
+// i
+initial
+begin
+	i = 1'b1;
+	# 25000;
+	repeat(4)
+	begin
+		i = 1'b0;
+		i = #112500 1'b1;
+		# 112500;
+	end
+	i = 1'b0;
+end 
+
+Block1_vlg_sample_tst tb_sample (
+	.a(a),
+	.b(b),
+	.c(c),
+	.d(d),
+	.e(e),
+	.f(f),
+	.g(g),
+	.h(h),
+	.i(i),
+	.sampler_tx(sampler)
+);
+
+Block1_vlg_check_tst tb_out(
+	.y1(y1),
+	.y2(y2),
+	.y3(y3),
+	.y4(y4),
+	.y5(y5),
+	.sampler_rx(sampler)
+);
+endmodule
+
