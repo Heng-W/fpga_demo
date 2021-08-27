@@ -1,0 +1,9 @@
+
+#output files
+*.rpt
+*.done
+*.smsg
+*.summary
+*.jdi
+*.pin
+*.sof
